@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:UiTest_Example"
+             x:Class="UiTest_Example.MainPage">
+    <ContentPage Title="Information" Padding="10">
+        <StackLayout VerticalOptions="FillAndExpand">
+            <Label Text="Name"/>
+            <Entry Placeholder="Fullname" AutomationId="name" x:Name="txtName"/>
+            <Label Text="Address"/>
+            <Entry Placeholder="Barangay / City / Country" AutomationId="address" x:Name="txtAddress"/>
+            <Label Text="Gender"/>
+            <Picker AutomationId="gender" x:Name="pickGender">
+                <Picker.Items>
+                    <x:String>Male</x:String>
+                    <x:String>Female</x:String>
+                </Picker.Items>
+            </Picker>
+            <Label Text="Birthday"/>
+            <DatePicker Date="01/01/1999" AutomationId="bidthday" x:Name="pickBday"/>
+            <Button AutomationId="btnDisplayInfo" 
+                    x:Name="btnDisp"
+                    Text="Display Info" VerticalOptions="End"/>
+
+        </StackLayout>
+    </ContentPage>
+    <ContentPage Title="Calculator">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Label Text="First Number : " Grid.ColumnSpan="2"/>
+            <Label Text="Second Number : " Grid.ColumnSpan="2" Grid.Column="2"/>
+            <Entry Placeholder="Enter First Number " Grid.ColumnSpan="2" 
+                   Grid.Row="1" AutomationId="num1" x:Name="num1"/>
+            <Entry Placeholder="Enter Second Number " Grid.ColumnSpan="2" 
+                   Grid.Row="1" Grid.Column="2" AutomationId="num2" x:Name="num2"/>
+            <Button Text="+" Grid.Row="2" Grid.Column="0" x:Name="btnAdd" AutomationId="add"/>
+            <Button Text="-" Grid.Row="2" Grid.Column="1" x:Name="btnSubtract" AutomationId="minus"/>
+            <Button Text="/" Grid.Row="2" Grid.Column="2" x:Name="btnDivide" AutomationId="divide"/>
+            <Button Text="*" Grid.Row="2" Grid.Column="3" x:Name="btnTimes" AutomationId="times"/>
+            <Label Text="Result : " Grid.Row="3" Grid.ColumnSpan="2"/>
+            <Label x:Name="result" AutomationId="result" Grid.Row="3" Grid.ColumnSpan="2" Grid.Column="2"/>
+        </Grid>
+    </ContentPage>
+
+</TabbedPage>
