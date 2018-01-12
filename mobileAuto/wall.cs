@@ -21,6 +21,7 @@ namespace mobileAuto
 
         [SetUp]
         public void BeforeEachTest()
+            //sample note
         {
             app = AppInitializer.StartApp(platform);
         }
